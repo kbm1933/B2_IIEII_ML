@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>file_result page</title>
+</head>
+<body>
+    <h1> 이미지 결과 리스트 </h1>
+
+    {% for file in files %}
+    <div>
+        <h3>{{ file.title }}</h3>
+        <a href="{% url 'community:detail_image_info' file.id %}"> {{ file.imgfile }} </a>
+        <hr />
+    </div>
+    {% endfor %}
+
+</body>
+</html>
