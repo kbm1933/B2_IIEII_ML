@@ -10,7 +10,7 @@
 
     <h2>제목 | {{ file.title }}</h2>
     <p>작성자 ID | {{ file.user }}</p>
-    {{ file.imgfile }}
+    <img class="feed_img" src='{{ file.imgfile.url }}'><br>
     
     <hr />
 
