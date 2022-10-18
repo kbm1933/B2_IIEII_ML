@@ -20,8 +20,7 @@ IIEII 사물 인식 프로젝트
 
 
 ## 아래 페이지를 클릭하시면 자세한 내용을 보실 수 있습니다.
-https://www.notion.so/23c6d5761db74d08a24812972c9ba77a
-
+https://onyx-linen-fe0.notion.site/IIEII-84598579ff8e447ba3c44949792673d6
 
 ## 진행상황
 
