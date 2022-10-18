@@ -3,11 +3,13 @@ from django.shortcuts import render, redirect
 from community.forms import FileUploadForm
 from community.models import FileUpload
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
 
-
+@login_required
 def fileUpload(request):
     if request.method == 'GET':  # 단순 주소창에 입력했을때
         return render(request, 'fileupload.html') 
@@ -22,6 +24,8 @@ def fileUpload(request):
     
 
 
+
+@login_required
 def file_result(request):
     files = FileUpload.objects.all()
 
@@ -33,6 +37,8 @@ def file_result(request):
 
 
 
+
+@login_required
 def detail_image_info(request, file_id):
     # article = Article.objects.get(id=article_id)
     file = get_object_or_404(FileUpload, id=file_id)

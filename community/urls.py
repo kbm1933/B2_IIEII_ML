@@ -1,6 +1,7 @@
 from django.shortcuts import redirect
 from django.urls import path
 from community import views
+from django.conf import settings
 
 
 app_name = 'community'
