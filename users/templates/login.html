@@ -1,3 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login Page
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
 
 
 <body>
-
+    {% block content %}
     <h1> 로그인 페이지 </h1>
 
     <form action="{% url 'users:login' %}" method="POST">
@@ -22,7 +28,10 @@
         />
         <input type="password" name="password" id="" placeholder="password" />
         <input type="submit" />
+
+        
     </form>
+    {% endblock %}
     
 </body>
 

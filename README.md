@@ -32,3 +32,4 @@ https://www.notion.so/23c6d5761db74d08a24812972c9ba77a
 
 - 10/18(화)
     - 장고 : 미해결 부분 이미지 태그와 DTL사용해서 해결완료
+    - 장고 : 로그인 로그아웃 기능 + 로그인된 사용자만 community templates에 접근가능
