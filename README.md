@@ -28,18 +28,21 @@
 
 
 ## 주요 구현 방법
-    - 머신러닝
-        - 사용한 데이터셋
+- 머신러닝
+   - 사용한 데이터셋
         [Fruit 360 | Kaggle | Dataset](https://www.kaggle.com/datasets/moltean/fruits)
 
-        - 사용한 라벨링 툴
+  - 사용한 라벨링 툴
         [Label Studio](https://github.com/heartexlabs/labelImg)
 
-        - 사용한 머신러닝(딥러닝) 모델
+   - 사용한 머신러닝(딥러닝) 모델
         [YOLOv5](https://github.com/ultralytics/yolov5)
 
-        - 라벨링한 데이터를 학습한 컴퓨터
+   - 라벨링한 데이터를 학습한 컴퓨터
         [Colab notebooks](https://colab.research.google.com/)
+
+- 장고
+  - django 
 
 
 ## 📝 공통 문서
