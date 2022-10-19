@@ -20,9 +20,11 @@
     {% for file in files %}
     
     <div>
-        <h3>{{ file.title }} | ID : {{ file.user }}</h3>
+        {#        <h3>{{ file.title }} | ID : {{ file.user }}</h3>#}
         <img class="feed_img" src='{{ file.imgs.url }}'><br>
     </div>
+        이 과일은 {{ file.fruit_class }} 일 확률이 {{ file.confidence }}정도입니다.
+
     <a href="{% url 'community:detail_image_info' file.id %}"> 이미지 정보 보러가기 </a>
     <hr />
     {% endfor %}

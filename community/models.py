@@ -14,5 +14,8 @@ class FileUpload(models.Model):
     def __str__(self):
         return self.title
 
+
 class YoloResult(models.Model):
     imgs = models.ImageField(null=True, upload_to='images/', blank=True, editable=True)
+    fruit_class = models.TextField(null=True)
+    confidence = models.TextField(null=True)
