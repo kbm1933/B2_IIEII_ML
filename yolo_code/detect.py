@@ -18,13 +18,15 @@ def get_img(idx):
     results = model(img)
     detect = results.pandas().xyxy[0] #좌표 얻기
     print(detect)
- 
+    results.save()
 
-    cv2.rectangle(img, (int(results.xyxy[0][0][0].item()), int(results.xyxy[0][0][1].item())), (int(results.xyxy[0][0][2].item()), int(results.xyxy[0][0][3].item())), (0,0,255))
-    cv2.imwrite(f'result{idx}.png', img)
-    
-    yolo_url = (f'D:/prog/B2_IIEII_ML/result{idx}.png')
-   
-    YoloResult.objects.create(imgs = yolo_url)
-    
+    cv2.imwrite(f'media/YOLO/result{idx}.jpg', img)
+    yolo_url = (f'YOLO/result{idx}.jpg')
+
+    detect_result = results.pandas().xyxy[0].to_numpy() # 인식한 결과의 정보 : 확률과 어떤 과일인지 클래스 이름
+    print(detect_result)
+    confidence = detect_result[0][4] * 100
+    fruit_cls = detect_result[0][6]
+
+    YoloResult.objects.create(imgs=yolo_url, confidence=confidence, fruit_class=fruit_cls)
     return()
