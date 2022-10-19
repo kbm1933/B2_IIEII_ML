@@ -26,10 +26,11 @@ def signup(request):
 
 
 def login(request):
-    if request.user.is_authenticated: # 유저가 로그인 되었을때 로그인 페이지 url 접속시 fileupload로 리다이렉션
-        return redirect('community:fileupload')
-    if not request.user.is_authenticated:
-        return render(request, 'login.html')
+    if request.method == 'GET':  # 단순 주소창에 입력했을때
+        if request.user.is_authenticated: # 유저가 로그인 되었을때 로그인 페이지 url 접속시 fileupload로 리다이렉션
+            return redirect('community:fileupload')
+        if not request.user.is_authenticated:
+            return render(request, 'login.html')
 
     elif request.method == 'POST':  # 로그인 요청
         username = request.POST.get('username')    
