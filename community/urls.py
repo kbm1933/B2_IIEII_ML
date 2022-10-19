@@ -11,4 +11,5 @@ urlpatterns = [
     path('fileupload/', views.fileUpload, name='fileupload'),
     path('file_result/', views.file_result, name='file_result'), 
     path('<int:file_id>/', views.detail_image_info, name='detail_image_info'),
+    path('fileupload/error/',views.fileUpload, name='error'),
 ] 
