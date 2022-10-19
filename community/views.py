@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from community.forms import FileUploadForm
 from community.models import FileUpload
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -28,7 +27,7 @@ def fileUpload(request):
 @login_required
 def file_result(request):
     files = FileUpload.objects.all()
-
+    
     context = {
         'files':files
     }
