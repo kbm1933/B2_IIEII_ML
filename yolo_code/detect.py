@@ -60,7 +60,7 @@ def get_img(idx):
 
     detect_result = results.pandas().xyxy[0].to_numpy() # 인식한 결과의 정보 : 확률과 어떤 과일인지 클래스 이름
     print(detect_result)
-    confidence = detect_result[0][4] * 100
+    confidence = int(detect_result[0][4] * 100)
     fruit_cls = detect_result[0][6]
 
     YoloResult.objects.create(imgs=yolo_url, confidence=confidence, fruit_class=fruit_cls)
