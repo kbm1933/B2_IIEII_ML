@@ -133,5 +133,6 @@ dmypy.json
 .pt
 runs/
 0001_initial.py
+0002_initial.py
 0002_fileupload_user.py
 media/
