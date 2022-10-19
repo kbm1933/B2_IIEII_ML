@@ -35,7 +35,7 @@ def fileUpload(request):
 @login_required
 def file_result(request):
     # files = FileUpload.objects.all()
-    files = YoloResult.objects.all()
+    files = YoloResult.objects.all().order_by('-id')
 
     context = {
         'files':files
