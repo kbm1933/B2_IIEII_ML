@@ -24,16 +24,18 @@ def fileUpload(request):
         last_save = FileUpload.objects.last()
         idx = last_save.id
         # print('+++++++++++++++++++++++++++++++++++++++++++',idx) ##id값 확인
-        detect.get_img(idx)
-
-        return redirect('community:file_result')
+        try:
+            error = detect.get_img(idx)
+            return redirect('community:file_result')
+        except:
+            return render(request,'error.html')
     
 
 
 
 @login_required
 def file_result(request):
-    files = YoloResult.objects.all()
+    files = YoloResult.objects.all().order_by('-id')
 
     context = {
         'files':files
