@@ -1,9 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from community.forms import FileUploadForm
-from community.models import FileUpload
+from community.models import FileUpload, YoloResult
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from yolo_code import detect
+import cv2
 
 
 # Create your views here.
@@ -19,6 +20,11 @@ def fileUpload(request):
         user = request.user
 
         FileUpload.objects.create(user=user, title=title, imgfile=imgfile)
+       
+        last_save = FileUpload.objects.last()
+        idx = last_save.id
+        # print('+++++++++++++++++++++++++++++++++++++++++++',idx) ##id값 확인
+        detect.get_img(idx)
 
         return redirect('community:file_result')
     
@@ -27,7 +33,7 @@ def fileUpload(request):
 
 @login_required
 def file_result(request):
-    files = FileUpload.objects.all()
+    files = YoloResult.objects.all()
 
     context = {
         'files':files
