@@ -21,7 +21,7 @@
     
     <div>
         <h3>{{ file.title }} | ID : {{ file.user }}</h3>
-        <img class="feed_img" src='{{ file.imgfile.url }}'><br>
+        <img class="feed_img" src='{{ file.imgs.url }}'><br>
     </div>
     <a href="{% url 'community:detail_image_info' file.id %}"> 이미지 정보 보러가기 </a>
     <hr />
