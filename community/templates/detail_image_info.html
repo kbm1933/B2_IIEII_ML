@@ -34,13 +34,13 @@
             {% if not file.title %}
             <div class = 'post-btn'>
                 <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/content_write/{{ file.id }}'">게시글 작성</button>
-                <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">결과 페이지</button>
+                <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">지금까지 업로드된 이미지 보러가기</button>
             </div>
 
             {% else %}
             <div class = 'edit-btn' style="text-align: right; margin-right : 20px;">
                 <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/content_write/{{ file.id }}'">게시글 수정</button>
-                <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">결과 페이지</button>
+                <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">지금까지 업로드된 이미지 보러가기</button>
             </div>
             <h3><b>제목 | {{ file.title }}</h3>
             <h4><b>ID &nbsp; &nbsp; | {{ file.user }}</h4>

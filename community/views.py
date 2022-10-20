@@ -26,11 +26,12 @@ def fileUpload(request):
         
         try:
             error = detect.get_img(idx)
-            return redirect('community:file_result')
+
+            return redirect('community:detail_image_info', idx)
         except:
             delete_file = FileUpload.objects.get(id=idx)
             delete_file.delete()
-            empty_yolo = YoloResult()
+            empty_yolo = YoloResult(id=idx)
             empty_yolo.save()
             empty_yolo.delete()
             return render(request,'error.html')
