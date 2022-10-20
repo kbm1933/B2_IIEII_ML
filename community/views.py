@@ -1,3 +1,4 @@
+from importlib.resources import contents
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from community.forms import FileUploadForm
@@ -17,10 +18,11 @@ def fileUpload(request):
         return render(request, 'fileupload.html') 
     elif request.method == 'POST':
         title = request.POST.get('title')
+        content = request.POST.get('content')
         imgfile = request.FILES['file']
         user = request.user
 
-        FileUpload.objects.create(user=user, title=title, imgfile=imgfile)
+        FileUpload.objects.create(user=user, title=title, content=content, imgfile=imgfile)
        
         last_save = FileUpload.objects.last()
         idx = last_save.id
