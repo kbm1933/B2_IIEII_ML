@@ -30,6 +30,9 @@ def fileUpload(request):
         except:
             delete_file = FileUpload.objects.get(id=idx)
             delete_file.delete()
+            empty_yolo = YoloResult()
+            empty_yolo.save()
+            empty_yolo.delete()
             return render(request,'error.html')
     
 
