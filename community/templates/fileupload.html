@@ -29,13 +29,31 @@
         <hr />
 
     {% load static %}
+    
     <div class="container">
         <form method="POST" action="{% url 'community:fileupload' %}" enctype="multipart/form-data" novalidate>
             {% csrf_token %}
             <div>
                 <input type="text" name="title" id="title" placeholder="title" />
             </div>
-            <input type="file" name="file" class="form-control-file border">
+            
+            
+            <input type="file" name="file" class="form-control-file border" onchange="readURL(this);">            
+            <br />
+            <img id="preview" />
+            <script>
+                function readURL(input){
+                    if(input.files && input.files[0]){
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                            document.getElementById('preview').src = e.target.result;
+                        };
+                        reader.readAsDataURL(input.files[0]);
+                    }else{
+                        document.getElementById('preview').src = "";
+                    }
+                }
+            </script>
             <input type="submit" name='submit' lass="btn btn-primary col-12" value="제출">
         </form>
     </div>

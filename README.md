@@ -1,14 +1,23 @@
-IIEII 사물 인식 프로젝트
-# **프로젝트 개요**
+# IIEII 사물 인식 프로젝트 #
+## **프로젝트 개요**
+- [실전 머신러닝]을 실습 하며 배운 머신러닝 기반으로 사물 분류 웹서비스 개발
+
 
 ## 목표
-
-- [실전 머신러닝]을 실습 하며 배운 머신러닝 기반으로 사물 분류 웹서비스 개발
 - Django와 머신러닝을 활용하여 기한 내에 프로젝트 완성을 목표
 - CNN/YOLO를 이용하여 이미지 분할(Segmentation)하는 과정 이해
 
-## 주요 구현 기능
 
+## ⏲️ 개발기간
+2022년 10월 17일 ~ 2022년 10월 20일
+
+
+## 🧙 멤버구성
+팀장 [김병문](https://github.com/kbm1933)
+팀원 [김동익](https://github.com/DongIkkk), [오형석](https://github.com/auberr), [이혜원](https://github.com/wonprogrammer), [최정윤](https://github.com/uniqquej)
+
+
+## 주요 구현 기능
 - 핵심 기능
     - 머신러닝
         - [사물 인식] 업로드 된 사진이 과일인지 아닌지 분류
@@ -18,17 +27,64 @@ IIEII 사물 인식 프로젝트
         - 업로드된 사진 클릭하면 페이지 이동, 해당 이미지 카테고리 출력
 
 
+## 주요 구현 방법
+- 머신러닝
+   - 사용한 데이터셋
+        [Fruit 360 | Kaggle | Dataset](https://www.kaggle.com/datasets/moltean/fruits)
 
-## 아래 페이지를 클릭하시면 자세한 내용을 보실 수 있습니다.
-https://onyx-linen-fe0.notion.site/IIEII-84598579ff8e447ba3c44949792673d6
+  - 사용한 라벨링 툴
+        [Label Studio](https://github.com/heartexlabs/labelImg)
 
-## 진행상황
+   - 사용한 머신러닝(딥러닝) 모델
+        [YOLOv5](https://github.com/ultralytics/yolov5)
+
+   - 라벨링한 데이터를 학습한 컴퓨터
+        [Colab notebooks](https://colab.research.google.com/)
+
+- 장고
+  - django 
+
+
+## 📝 공통 문서
+
+* __화면기획서(Wireframe)__ [상세보기](https://www.figma.com/file/9Xu1UFFRoiBmwK55T0xZOc/3_team_project?node-id=0%3A1)
+<img src="https://user-images.githubusercontent.com/6766202/196686022-c94fbd47-9ff4-4fd5-82e2-13d4d9cf3dc5.png">
+
+
+* __ERD(Entity Relationship Diagram)__ [상세보기](https://www.notion.so/IIEII-84598579ff8e447ba3c44949792673d6#4cced25164be4a53a0b0d61844214a0e)
+<img src="https://user-images.githubusercontent.com/6766202/196686021-cfb900c1-e934-4f53-837f-07b605acf10d.jpg">
+
+
+* __API(Application Programming Interface)__ [상세보기](https://www.notion.so/IIEII-84598579ff8e447ba3c44949792673d6#431e9dacc4a8427aabbf752b7a0664bf)
+<img src="https://user-images.githubusercontent.com/6766202/196686012-44f3b7e3-1796-48fe-9fc6-44ad5241189d.png">
+
+
+
+## 프로젝트 소개 상세 노션 페이지
+[상세보기](https://onyx-linen-fe0.notion.site/IIEII-84598579ff8e447ba3c44949792673d6)
+
+
+
+## 프로젝트 진행상황
 
 - 10/17(월)
-    - 장고 : 사용자가 업로드한 파일 database에 업로드 한 뒤 가져오기 (이혜원)
+    - 머신러닝 : 학습할 데이터 라벨링
+    [김병문](https://github.com/kbm1933), [김동익](https://github.com/DongIkkk), [오형석](https://github.com/auberr), [최정윤](https://github.com/uniqquej)
+        - [YOLOv5](https://github.com/ultralytics/yolov5) 모델을 사용해서 11가지 과일을 학습 사용
+        - [Fruits 360](https://www.kaggle.com/datasets/moltean/fruits) 데이터 셋을 사용
+        - 11가지 과일을 선별해서 [라벨링](https://github.com/heartexlabs/labelImg)
+        - blueberry, grape, kiwi, lemon, mango, melon, peach, pear, pineapple, strawberry, watermelon
+
+    - 장고 : 사용자가 업로드한 파일 database에 업로드 한 뒤 가져오기 [이혜원](https://github.com/wonprogrammer)
          - 미해결 : 이미지 저장 및 호출은 되는데 사진으로 불러와지는게 아니라 경로'주소'가 불러와짐 
          
-
 - 10/18(화)
-    - 장고 : 미해결 부분 이미지 태그와 DTL사용해서 해결완료
+    - 머신러닝 : 사물 인식_모델 테스트 및 학습
+    [김병문](https://github.com/kbm1933), [김동익](https://github.com/DongIkkk), [오형석](https://github.com/auberr), [최정윤](https://github.com/uniqquej)
+
+    - 장고 : 미해결 부분 이미지 태그와 DTL사용해서 해결완료 [이혜원](https://github.com/wonprogrammer)
     - 장고 : 로그인 로그아웃 기능 + 로그인된 사용자만 community templates에 접근가능
+
+- 10/19(수)
+    - 머신러닝 및 장고 : 학습한 모델을 장고 내 작동 구현
+        [김병문](https://github.com/kbm1933), [김동익](https://github.com/DongIkkk), [오형석](https://github.com/auberr), [이혜원](https://github.com/wonprogrammer), [최정윤](https://github.com/uniqquej)
