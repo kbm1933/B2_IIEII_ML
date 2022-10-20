@@ -30,8 +30,18 @@
                 }
             </script>
             <div style="text-align: right;">
-                <button type="submit" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">제출</button>
+                <button id = 'load_btn' type="submit" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">제출</button>
             </div>
+            <script>
+                const mode =document.getElementById('load_btn');
+                mode.addEventListener('click', function(){
+                    if(mode.innerText == "제출"){
+                        mode.innerText = '로딩중';
+                    } else {
+                        mode.innerText = '제출'
+                    }
+                });
+            </script>
             <hr>
             <div>
                 <h2> 현재 인식 가능한 11가지 종류 과일</h2>
