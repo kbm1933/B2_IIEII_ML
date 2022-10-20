@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Content Write page
+{% endblock %}
+
+{% block content %}
+
+<form action="{% url 'community:create_post' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <h5>게시글 제목</h5>
+        <input type="text" name="title" id="title" placeholder="title" />
+    </div>
+
+    <div>
+        <h5>게시글 내용</h5>
+        <textarea class="form-control" id='content'  style="resize: none" name='content' id="content" placeholder="게시글을 입력해 주세요"></textarea>
+    </div>
+
+    <div class="save_btn" >
+        <button type="submit" class="btn-hover color-2" style="float:right;">Save</button>
+    </div>
+</form>
+
+
+
+{% endblock content %}

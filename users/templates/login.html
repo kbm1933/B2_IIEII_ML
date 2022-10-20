@@ -1,38 +1,28 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    Login Page
-{% endblock %}
+{% block title %} Login {% endblock title %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-</head>
-
-
-<body>
-    {% block content %}
-    <h1> 로그인 페이지 </h1>
-
+{% block content %}
+<div class = 'wrap'>
+    <div class = 'page_name'>
+        <h1> 로그인 </h1>
+    </div>
     <form action="{% url 'users:login' %}" method="POST">
         {% csrf_token %}
-        <input type="text" 
-        name="username"  
-        placeholder="username" 
-        id='username' 
-        class='username'
-        />
-        <input type="password" name="password" id="" placeholder="password" />
-        <input type="submit" />
+        <div class = 'input_boxes'>
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" name="username" placeholder="username" >
+              </div>
 
-        
+              <div class="input-group input-group-lg">
+                <input type="password" class="form-control" name="password" placeholder="password" >
+              </div>
+
+              <div class = 'login_btns'>
+                  <button type="submit" class="btn btn-outline-dark">로그인</button>
+                  <button type="button" class="btn btn-outline-dark" onclick="location.href='{%url 'users:signup' %}'">회원가입</button>
+              </div>
+        </div>
     </form>
-    {% endblock %}
-    
-</body>
-
-</html>
+</div>
+    {% endblock content %}

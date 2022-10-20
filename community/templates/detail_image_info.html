@@ -19,6 +19,11 @@
 
     <h3>제목 | {{ file.title }}</h3>
     <h4>작성자 ID | {{ file.user }}</h4>
+
+    <div>
+        <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/content_write'">게시글 작성</button>
+    </div>
+
     <div>
         <h5>게시글</h5>
         <h5>{{ file.content }}</h5>

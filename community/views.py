@@ -1,12 +1,11 @@
-from importlib.resources import contents
-from django.http import HttpResponse
+
 from django.shortcuts import render, redirect
 from community.forms import FileUploadForm
 from community.models import FileUpload, YoloResult
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from yolo_code import detect
-import cv2
+
 
 
 # Create your views here.
@@ -24,13 +23,15 @@ def fileUpload(request):
 
         FileUpload.objects.create(user=user, title=title, content=content, imgfile=imgfile)
        
-        last_save = FileUpload.objects.last()
+        last_save = FileUpload.objects.last() #가장 마지막에 저장된 파일 정보
         idx = last_save.id
-        # print('+++++++++++++++++++++++++++++++++++++++++++',idx) ##id값 확인
+        
         try:
             error = detect.get_img(idx)
             return redirect('community:file_result')
         except:
+            delete_file = FileUpload.objects.get(id=idx)
+            delete_file.delete()
             return render(request,'error.html')
     
 
@@ -52,7 +53,7 @@ def file_result(request):
 
 @login_required
 def detail_image_info(request, file_id):
-    # article = Article.objects.get(id=article_id)
+    
     file = get_object_or_404(FileUpload, id=file_id)
 
     context = {
@@ -60,3 +61,25 @@ def detail_image_info(request, file_id):
     }
 
     return render(request, 'detail_image_info.html', context)
+
+
+
+
+
+
+@login_required
+def content_write(request):
+    return render(request, 'content_write.html')
+
+
+
+
+
+@login_required
+def create_post(request):
+    post = FileUpload()
+    post.title = request.POST.get('title')
+    post.content = request.POST.get('content')
+    
+    post.save()
+    return redirect('community:detail_image_info')

@@ -4,39 +4,25 @@
     file_result page
 {% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>file_result page</title>
-</head>
-<body>
+
+
     {% block content %}
-
-    <h1> 이미지 결과 리스트 </h1>
-    <li class="nav-item">
-        <a class="nav-link" href="/community/fileupload"> +추가 업로드 </a>
-    </li>
-
-    <hr />
-
+<div class="title-box">
+    <h1> 이미지 분석 결과 리스트 </h1>
+    <div style="text-align: right">
+        <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/fileupload'">추가 업로드</button>
+    </div>
+</div>
+<div class="all-box">
     {% for file in files %}
-    <div>
-        <h3>{{ file.title }} | ID : {{ file.user }}</h3>
+    
+    <div class="result-box">
+        <img class="feed-img" src='{{ file.imgs.url }}'><br>
+        <h3>이 과일은 {{ file.fruit_class }} 일 확률이 {{ file.confidence }} %정도입니다.</h3>
+        <a href="{% url 'community:detail_image_info' file.id %}"> 이미지 정보 보러가기 </a>
+        <hr/>
     </div>
-
-    <div>
-        <img class="feed_img" src='{{ file.imgs.url }}'><br>
-    </div>
-        이 과일은 {{ file.fruit_class }} 일 확률이 {{ file.confidence }} %정도입니다.
-
-        <a href="{% url 'community:detail_image_info' file.id %}"> 👉 이미지 정보 보러가기 </a>
-
-    <hr />
     {% endfor %}
+</div>
+{% endblock %}
 
-    {% endblock %}
-</body>
-</html>
