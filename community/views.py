@@ -68,18 +68,32 @@ def detail_image_info(request, file_id):
 
 
 @login_required
-def content_write(request):
-    return render(request, 'content_write.html')
+def content_write(request, file_id):
+    if request.method == 'GET':  # 단순 주소창에 입력했을때
+        file = FileUpload.objects.get(id=file_id)
 
+        context = {
+            'file':file
+        }
+        return render(request, 'content_write.html', context) 
 
+    elif request.method == 'POST':
+        post = FileUpload.objects.get(id=file_id)
 
+        title = request.POST.get('title')
+        content = request.POST.get('content')
 
+        post.title = title
+        post.content = content
+        post.save()
 
-@login_required
-def create_post(request):
-    post = FileUpload()
-    post.title = request.POST.get('title')
-    post.content = request.POST.get('content')
+        context = {
+            'post.title' : post.title,
+            'post.content': post.content
+        }
+        return redirect(f'/community/{file_id}')
     
-    post.save()
-    return redirect('community:detail_image_info')
+
+
+
+

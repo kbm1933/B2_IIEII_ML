@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<form action="{% url 'community:create_post' %}" method="post">
+<form action='/community/content_write/{{ file.id }}' method="post">
     {% csrf_token %}
     <div>
         <h5>게시글 제목</h5>
