@@ -9,7 +9,10 @@ from django.contrib import auth
 
 def signup(request):
     if request.method == 'GET':  # 단순 주소창에 입력했을때
-        return render(request, 'signup.html')  
+        if request.user.is_authenticated: # 유저가 로그인 되었을때 회원가입 페이지 url 접속시 fileupload로 리다이렉션
+            return redirect('community:fileupload')
+        if not request.user.is_authenticated:
+            return render(request, 'signup.html')
     elif request.method == 'POST':  # 회원가입 진행 
         username = request.POST.get('username')   # username은 signup.html안에 input박스에서 username 이다.
         password = request.POST.get('password')
