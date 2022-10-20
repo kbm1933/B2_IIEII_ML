@@ -44,27 +44,6 @@
 - 장고
   - django 
 
-
-## 📝 공통 문서
-
-* __화면기획서(Wireframe)__ [상세보기](https://www.figma.com/file/9Xu1UFFRoiBmwK55T0xZOc/3_team_project?node-id=0%3A1)
-<img src="https://user-images.githubusercontent.com/6766202/196686022-c94fbd47-9ff4-4fd5-82e2-13d4d9cf3dc5.png">
-
-
-* __ERD(Entity Relationship Diagram)__ [상세보기](https://www.notion.so/IIEII-84598579ff8e447ba3c44949792673d6#4cced25164be4a53a0b0d61844214a0e)
-<img src="https://user-images.githubusercontent.com/6766202/196686021-cfb900c1-e934-4f53-837f-07b605acf10d.jpg">
-
-
-* __API(Application Programming Interface)__ [상세보기](https://www.notion.so/IIEII-84598579ff8e447ba3c44949792673d6#431e9dacc4a8427aabbf752b7a0664bf)
-<img src="https://user-images.githubusercontent.com/6766202/196686012-44f3b7e3-1796-48fe-9fc6-44ad5241189d.png">
-
-
-
-## 프로젝트 소개 상세 노션 페이지
-[상세보기](https://onyx-linen-fe0.notion.site/IIEII-84598579ff8e447ba3c44949792673d6)
-
-
-
 ## 프로젝트 진행상황
 
 - 10/17(월)
