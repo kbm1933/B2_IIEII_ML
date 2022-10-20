@@ -9,14 +9,13 @@
             <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">지금까지 업로드된 이미지 보러가기</button>
         </div>
     </div>
-    <div class="container">
+    <div class="upload-box">
         <form method="POST" action="{% url 'community:fileupload' %}" enctype="multipart/form-data" novalidate>
             {% csrf_token %}                 
             <input class="form-control" type="file" name="file" id="formFile" onchange="readURL(this);">                        
             <br />
-            <img id="preview" class="imgs"/>
-            
-            
+            <img id="preview" class="image-preview"/>
+
             <script>
                 function readURL(input){
                     if(input.files && input.files[0]){
@@ -32,6 +31,12 @@
             </script>
             <div style="text-align: right;">
                 <button type="submit" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">제출</button>
+            </div>
+            <hr>
+            <div>
+                <h2> 현재 인식 가능한 11가지 종류 과일</h2>
+                <h3> blueberry grape kiwi lemon mango melon peach pear pineapple
+                    strawberry watermelon</h3>
             </div>
         </form>
     </div>
