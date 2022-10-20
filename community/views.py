@@ -53,9 +53,11 @@ def file_result(request):
 def detail_image_info(request, file_id):
     
     file = get_object_or_404(FileUpload, id=file_id)
+    yolo_file = get_object_or_404(YoloResult, id=file_id)
 
     context = {
-        'file':file
+        'file':file,
+        'yolo_file' : yolo_file
     }
 
     return render(request, 'detail_image_info.html', context)
