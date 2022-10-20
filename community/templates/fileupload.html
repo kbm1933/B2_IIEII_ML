@@ -2,7 +2,6 @@
 
 {% block title %} fileupload page {% endblock %}
 
-
 {% block content %}
     <div class="title-box">
         <h3>선별할 과일을 선택해 주세요</h3>
@@ -10,13 +9,14 @@
             <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">지금까지 업로드된 이미지 보러가기</button>
         </div>
     </div>
-   
     <div class="container">
         <form method="POST" action="{% url 'community:fileupload' %}" enctype="multipart/form-data" novalidate>
             {% csrf_token %}                 
             <input class="form-control" type="file" name="file" id="formFile" onchange="readURL(this);">                        
             <br />
             <img id="preview" class="imgs"/>
+            
+            
             <script>
                 function readURL(input){
                     if(input.files && input.files[0]){
@@ -33,8 +33,6 @@
             <div style="text-align: right;">
                 <button type="submit" class="btn btn-outline-dark" onclick="location.href='/community/file_result'">제출</button>
             </div>
-            
-            
         </form>
     </div>
 

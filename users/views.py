@@ -20,7 +20,7 @@ def signup(request):
         passwordcheck = request.POST.get('passwordcheck')
 
         if password == passwordcheck:
-            User.objects.create_user(username=username, password=password, profile=profile)  #
+            User.objects.create_user(username=username, password=password, profile=profile) 
             return redirect('users:login')
         else:
             return render(request, 'signup.html')

@@ -88,3 +88,8 @@
 - 10/19(수)
     - 머신러닝 및 장고 : 학습한 모델을 장고 내 작동 구현
         [김병문](https://github.com/kbm1933), [김동익](https://github.com/DongIkkk), [오형석](https://github.com/auberr), [이혜원](https://github.com/wonprogrammer), [최정윤](https://github.com/uniqquej)
+
+
+- 10/20(목)
+    - 머신러닝 및 장고 : 장고 css 추가 및 기능보완
+    - 장고 : 게시글 작성 완성

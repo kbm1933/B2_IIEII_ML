@@ -4,7 +4,9 @@
     file_result page
 {% endblock %}
 
-{% block content %}
+
+
+    {% block content %}
 <div class="title-box">
     <h1> 이미지 분석 결과 리스트 </h1>
     <div style="text-align: right">
@@ -13,10 +15,10 @@
 </div>
 <div class="all-box">
     {% for file in files %}
+    
     <div class="result-box">
         <img class="feed-img" src='{{ file.imgs.url }}'><br>
         <h3>이 과일은 {{ file.fruit_class }} 일 확률이 {{ file.confidence }} %정도입니다.</h3>
-
         <a href="{% url 'community:detail_image_info' file.id %}"> 이미지 정보 보러가기 </a>
         <hr/>
     </div>

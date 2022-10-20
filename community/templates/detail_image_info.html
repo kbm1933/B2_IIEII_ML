@@ -17,8 +17,19 @@
     {% block content %}
 
 
-    <h2>제목 | {{ file.title }}</h2>
-    <p>작성자 ID | {{ file.user }}</p>
+    <h3>제목 | {{ file.title }}</h3>
+    <h4>작성자 ID | {{ file.user }}</h4>
+
+    <div>
+        <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/content_write/{{ file.id }}'">게시글 작성</button>
+    </div>
+
+    <div>
+        <h5>게시글</h5>
+        <h5>{{ file.content }}</h5>
+    </div>
+
+
     <img class="feed_img" src='{{ file.imgfile.url }}'><br>
     
     <hr />

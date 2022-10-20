@@ -1,4 +1,6 @@
+
 from django.shortcuts import render, redirect
+from community.forms import FileUploadForm
 from community.models import FileUpload, YoloResult
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -17,7 +19,6 @@ def fileUpload(request):
         title = request.POST.get('title')
         imgfile = request.FILES['file']
         user = request.user
-
         FileUpload.objects.create(user=user, imgfile=imgfile)
        
         last_save = FileUpload.objects.last() #가장 마지막에 저장된 파일 정보
@@ -36,6 +37,7 @@ def fileUpload(request):
 
 @login_required
 def file_result(request):
+    
     files = YoloResult.objects.all().order_by('-id')
 
     context = {
@@ -57,3 +59,39 @@ def detail_image_info(request, file_id):
     }
 
     return render(request, 'detail_image_info.html', context)
+
+
+
+
+
+
+@login_required
+def content_write(request, file_id):
+    if request.method == 'GET':  # 단순 주소창에 입력했을때
+        file = FileUpload.objects.get(id=file_id)
+
+        context = {
+            'file':file
+        }
+        return render(request, 'content_write.html', context) 
+
+    elif request.method == 'POST':
+        post = FileUpload.objects.get(id=file_id)
+
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+
+        post.title = title
+        post.content = content
+        post.save()
+
+        context = {
+            'post.title' : post.title,
+            'post.content': post.content
+        }
+        return redirect(f'/community/{file_id}')
+    
+
+
+
+
