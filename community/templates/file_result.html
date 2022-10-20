@@ -20,10 +20,6 @@
         <a class="nav-link" href="/community/fileupload"> +추가 업로드 </a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="/community/fileupload"> +추가 업로드 </a>
-    </li>
-
     <hr />
 
 
@@ -42,8 +38,6 @@
             이 과일은 {{ file.fruit_class }} 일 확률이 {{ file.confidence }} %정도입니다.
 
             <a href="{% url 'community:detail_image_info' file.id %}"> 👉 이미지 정보 보러가기 </a>
-
-        
 
         <hr />
         {% endfor %}
