@@ -15,25 +15,40 @@
 <body>
 
     {% block content %}
-
-
-    <h3>제목 | {{ file.title }}</h3>
-    <h4>작성자 ID | {{ file.user }}</h4>
-
-    <div>
-        <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/content_write/{{ file.id }}'">게시글 작성</button>
+    <div class="title-box">
+        <h1> 이미지 상세 페이지 </h1>
     </div>
 
-    <div>
-        <h5>게시글</h5>
-        <h5>{{ file.content }}</h5>
+    <div class = 'wrap-box'>
+        
+        <div class = 'result-imgs'>
+            <p>원본 이미지</p>
+            <img class="feed_img" id = 'upload_img' src='{{ file.imgfile.url }}'><br>
+            <p>결과 이미지</p>
+            <img class="feed_img" id = 'yolo_img' src='{{ yolo_file.imgs.url }}'><br>
+        </div>
+        
+        <div class = 'post-box'>
+            {% if not file.title %}
+            <div class = 'post-btn'>
+                <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/content_write/{{ file.id }}'">게시글 작성</button>
+            </div>
+
+            {% else %}
+            <div class = 'edit-btn' style="text-align: right; margin-right : 20px;">
+                <button type="button" class="btn btn-outline-dark" onclick="location.href='/community/content_write/{{ file.id }}'">게시글 수정</button>
+            </div>
+            <h3><b>제목 | {{ file.title }}</h3>
+            <h4><b>ID &nbsp; &nbsp; | {{ file.user }}</h4>
+            <br>
+            <br>
+             <div>
+                <h4><b>게시글</h4>
+                <h5>{{ file.content }}</h5>
+            </div>
+            {% endif %}
+        </div>
+
     </div>
-
-
-    <img class="feed_img" src='{{ file.imgfile.url }}'><br>
     
-    <hr />
     {% endblock %}
-
-</body>
-</html>
