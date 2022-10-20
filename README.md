@@ -77,3 +77,25 @@
 - 10/20(목)
     - 머신러닝 및 장고 : 장고 css 추가 및 기능보완
     - 장고 : 게시글 작성 완성
+
+##구현 사진
+- 회원가입
+![회원가입](https://user-images.githubusercontent.com/55372753/196967112-b33ea121-f928-4e50-93fa-34b51c3897eb.png)
+
+- 로그인
+![로그인](https://user-images.githubusercontent.com/55372753/196967206-d5a8403f-65bb-453b-9913-70b35926c58c.png)
+
+- 사물 선택
+![메인 페이지](https://user-images.githubusercontent.com/55372753/196967318-21f2f408-e777-4091-b36c-7d5a8c8d15eb.png)
+![메인 페이지2](https://user-images.githubusercontent.com/55372753/196967328-11a35998-da72-4ac5-99bd-32b451763a4a.png)
+
+- 결과 분석
+![결과 분석 페이지](https://user-images.githubusercontent.com/55372753/196967366-3cf25e88-eaf8-4b0e-98e1-8883abf6b3d5.png)
+
+- 결과 리스트
+![결과 리스트1](https://user-images.githubusercontent.com/55372753/196967420-ef831ec7-8eba-4948-aefa-56d8ad62b577.png)
+![결과 리스트2](https://user-images.githubusercontent.com/55372753/196967450-4737cf25-a636-49ce-bba8-ffcaf2c2146b.png)
+
+- 게시글
+![게시글 작성 페이지](https://user-images.githubusercontent.com/55372753/196967537-3410b7ff-8ff3-401f-bb02-674ce802968d.png)
+![게시글](https://user-images.githubusercontent.com/55372753/196967564-52ab37f6-fcfd-45db-b0ea-02570d22427c.png)
