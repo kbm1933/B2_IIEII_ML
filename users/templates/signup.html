@@ -1,35 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-</head>
+{% extends 'base.html' %}
 
+{% block title %} sign up {% endblock title %}
 
-<body>
-
-    <h1> 회원가입 페이지 </h1>
-
-    <li class="nav-item">
-        <a class="nav-link" href="login"> 로그인 </a>
-    </li>
-
+{% block content %}
+<div class = 'wrap'>
+    <div class = 'page_name'>
+        <h1> 회원가입 </h1>
+    </div>
     <form action="{% url 'users:signup' %}" method="POST">
         {% csrf_token %}
-        <input type="text" 
-        name="username"  
-        placeholder="username" 
-        id='username' 
-        class='username'
-        />
-        <input type="password" name="password" id="" placeholder="password" />
-        <input type="password" name="passwordcheck" id="" placeholder="passwordcheck" />
-        <input type="text" name="profilefromfront" id="profilefromfront" placeholder="profile 정보" />
-        <input type="submit" />
-    </form>
-    
-</body>
+        <div class = 'input_boxes'>
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" name="username" placeholder="username" >
+              </div>
 
-</html>
+              <div class="input-group input-group-lg">
+                <input type="password" class="form-control" name="password" placeholder="password" >
+              </div>
+
+              <div class="input-group input-group-lg">
+                <input type="password" class="form-control" name="passwordcheck" placeholder="passwordcheck"  >
+              </div>
+
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" name="profilefromfront" placeholder="profile 정보" >
+              </div>
+              <div class = 'signup_btns'>
+                  <button type="submit" class="btn btn-outline-dark">회원가입</button>
+                  <button type="button" class="btn btn-outline-dark" onclick="location.href='{%url 'users:login' %}'">로그인</button>
+              </div>
+        </div>
+    </form>
+</div>
+    {% endblock content %}
