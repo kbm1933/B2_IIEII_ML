@@ -5,23 +5,29 @@
 {% endblock %}
 
 {% block content %}
-
-<form action='/community/content_write/{{ file.id }}' method="post">
-    {% csrf_token %}
-    <div>
-        <h5>게시글 제목</h5>
-        <input type="text" name="title" id="title" placeholder="title" />
+    <div class="title-box">
+        <h3>게시글 작성하기</h3>
+        <form action='/community/content_write/{{ file.id }}' method="post">
+            {% csrf_token %}
+            <div style="text-align: right">
+                <button type="submit" class="btn btn-outline-dark">등록하기</button>
+            </div>
+            <div class="all-box">
+                <img class="feed-img" src='{{ file.imgfile.url }}'><br>
+                <div>
+                    <h5>게시글 제목</h5>
+                    <input type="text" class="form-control" name="title" id="title"
+                           aria-describedby="inputGroup-sizing-default" placeholder="제목을 입력해 주세요">
+                </div>
+                <div>
+                    <h5>게시글 내용</h5>
+                    <textarea class="form-control" id='content'  style="resize: none" name='content' id="content" placeholder="게시글을 입력해 주세요"></textarea>
+                </div>
+            </div>
+        </form>
     </div>
-
-    <div>
-        <h5>게시글 내용</h5>
-        <textarea class="form-control" id='content'  style="resize: none" name='content' id="content" placeholder="게시글을 입력해 주세요"></textarea>
     </div>
-
-    <div class="save_btn" >
-        <button type="submit" class="btn-hover color-2" style="float:right;">Save</button>
-    </div>
-</form>
+    <div class="upload-box">
 
 
 
