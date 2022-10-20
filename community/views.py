@@ -18,7 +18,7 @@ def fileUpload(request):
         imgfile = request.FILES['file']
         user = request.user
 
-        FileUpload.objects.create(user=user, title=title, imgfile=imgfile)
+        FileUpload.objects.create(user=user, imgfile=imgfile)
        
         last_save = FileUpload.objects.last() #가장 마지막에 저장된 파일 정보
         idx = last_save.id
