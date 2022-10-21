@@ -78,6 +78,9 @@
     - 머신러닝 및 장고 : 장고 css 추가 및 기능보완
     - 장고 : 게시글 작성 완성
 
+## 트러블 슈팅
+Link : [트러블 슈팅 위키로 이동](https://github.com/kbm1933/B2_IIEII_ML/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85)
+
 ## 구현 사진
 - 회원가입
 ![회원가입](https://user-images.githubusercontent.com/55372753/196967112-b33ea121-f928-4e50-93fa-34b51c3897eb.png)
