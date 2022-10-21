@@ -5,7 +5,7 @@
 
 ## 목표
 - Django와 머신러닝을 활용하여 기한 내에 프로젝트 완성을 목표
-- CNN/YOLO를 이용하여 이미지 분할(Segmentation)하는 과정 이해
+- CNN/YOLO를 이용하여 이미지 탐색(detection)하는 과정 이해
 
 
 ## ⏲️ 개발기간
